@@ -1,0 +1,135 @@
+.u-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.u-header {
+    height: 40;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-title {
+    font-size: 1.8em;
+}
+
+.u-control {
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-search, .u-sort {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.u-search input {
+    width: 80%;
+    height: 22px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    outline: none;
+}
+
+.u-sort select {
+    width: 90%;
+    height: 27px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+.u-sort select option {
+    background-color: rgb(0, 0, 255, .8);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.u-search, .u-sort label {
+    width: 150px;
+}
+
+.u-profile {
+    border: 1px solid rgba(4, 4, 4, .2);
+    padding: 15px 20px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-profile:nth-child(odd) {
+    background-color: rgb(204, 204, 204, .15);
+}
+
+.u-profile:nth-child(even) {
+    border-top: none;
+    border-bottom: none;
+}
+
+.u-profile-name {
+    min-width: 220px;
+    max-width: 250px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-profile-photo {
+    font-size: 3em;
+    color: rgba(3, 3, 3, .6);
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.u-profile-username {
+    min-width: 200px;
+    max-width: 250px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+}
+
+.u-profile-email, a {
+    color: blue;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .u-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+    .u-profile {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 10px;
+        min-width: 150px;
+        max-width: 350px;
+    }
+    .u-profile-photo {
+        width: 80px;
+    }
+    .u-profile-email {
+        margin-left: 63px;
+    }
+}
