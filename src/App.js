@@ -1,13 +1,21 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
-import UserList from './components/UserList';
+import UserDashboard from './components/UserDashboard';
+import UserDetail from './components/UserDetail';
 
 function App() {
 
   return (
     <div className="App">
-      <UserList/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={UserDashboard} />
+          <Route exact path="/user-details" component={UserDetail} />
+          <Route exact path="*" component={UserDashboard} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -32,7 +32,7 @@
 }
 
 .u-search input {
-    width: 80%;
+    width: 90%;
     height: 22px;
     border: 1px solid #333;
     border-radius: 3px;
@@ -59,9 +59,30 @@
     width: 150px;
 }
 
-.u-profile {
+.u-header-detail:nth-child(odd) {
+    background-color: rgb(204, 204, 204, .15);
+}
+
+.u-header-detail {
     border: 1px solid rgba(4, 4, 4, .2);
-    padding: 15px 20px;
+    padding: 10px;
+}
+
+.u-profile-details {
+    text-align: end;
+}
+
+.u-profile-details button {
+    background-color: transparent !important;
+    border: 1px solid rgba(3, 3, 3, .4);
+    border-radius: 3px;
+    color: rgba(3, 3, 3, .5);
+    font-weight: bold;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+
+.u-profile {
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -69,18 +90,9 @@
     align-items: center;
 }
 
-.u-profile:nth-child(odd) {
-    background-color: rgb(204, 204, 204, .15);
-}
-
-.u-profile:nth-child(even) {
-    border-top: none;
-    border-bottom: none;
-}
-
 .u-profile-name {
-    min-width: 220px;
-    max-width: 250px;
+    min-width: 200px;
+    max-width: 220px;
     height: 60px;
     display: flex;
     flex-direction: row;
@@ -91,7 +103,7 @@
 .u-profile-photo {
     font-size: 3em;
     color: rgba(3, 3, 3, .6);
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
 }
@@ -108,6 +120,10 @@
 .u-profile-email, a {
     color: blue;
     text-decoration: none;
+}
+
+.u-profile-details {
+    font-size: 0.9em;
 }
 
 @media (max-width: 600px) {
@@ -131,5 +147,9 @@
     }
     .u-profile-email {
         margin-left: 63px;
+    }
+
+    .u-header-detail {
+        padding-left: 0px;
     }
 }
