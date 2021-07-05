@@ -1,0 +1,138 @@
+.ud-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ud-header-title {
+    height: 40;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ud-title-user {
+    font-size: 1.5em;
+    color: blue;
+}
+
+.ud-title-data {
+    font-size: 1.5em;
+}
+
+.ud-title-card {
+    color: rgba(3, 3, 3, .9);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.ud-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ud-contact-info {
+    height: 110px;
+    width: 28%;
+    border: 1px solid rgba(3, 3, 3, .5);
+    padding: 10px;
+}
+
+.ud-contact-info>div {
+    font-size: .8em;
+}
+
+.ud-address {
+    height: 110px;
+    width: 28%;
+    border: 1px solid rgba(3, 3, 3, .5);
+    padding: 10px;
+}
+
+.ud-address>div {
+    font-size: .8em;
+}
+
+.ud-company {
+    height: 110px;
+    width: 28%;
+    border: 1px solid rgba(3, 3, 3, .5);
+    padding: 10px;
+}
+
+.ud-company>div {
+    font-size: .8em;
+}
+
+.ud-posts {
+    height: max-content;
+    width: 28%;
+    border: 1px solid rgba(3, 3, 3, .5);
+    padding: 10px;
+}
+
+.ud-posts>div {
+    font-size: .8em;
+}
+
+.ud-title-posts {
+    font-size: 1.2em;
+}
+
+.ud-back {
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.ud-back a {
+    color: #222;
+}
+
+.ud-control-posts {
+    padding: 10px;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "card card card"; */
+}
+
+/* .ud-posts {
+    grid-area: card;
+} */
+
+.ud-body-card {
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .ud-title-user, .ud-title-posts {
+        font-size: 1.2em;
+    }
+    .ud-title-data {
+        font-size: 1.2em;
+    }
+    .ud-control {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ud-contact-info, .ud-address, .ud-company {
+        width: 90%;
+        height: max-content;
+        padding: 15px;
+        border: none;
+    }
+    .ud-posts {
+        height: max-content;
+        width: 90%;
+        border: 1px solid rgba(3, 3, 3, .5);
+    }
+}

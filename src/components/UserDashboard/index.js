@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 import { IoPersonCircleSharp } from "react-icons/io5";
+import { BsArrowRightShort } from 'react-icons/bs';
+
 
 export default function UserDashboard() {
     const [users, setUsers] = useState([]);
@@ -10,9 +12,6 @@ export default function UserDashboard() {
     const [search, setSearch] = useState('');
     const [sortBy, setSortBy] = useState('');
     const [sortByFiltered, setByFiltered] = useState([]);
-    // const [uName, setUName] = useState('');
-    // const [uUserName, setUUserName] = useState('');
-    // const [uUserEmail, setUUserEmail] = useState('');
 
     const fetchData = async () => {
         await fetch(`https://jsonplaceholder.typicode.com/users`)
@@ -20,7 +19,6 @@ export default function UserDashboard() {
             .then((json) => setUsers(json))
             .then(console.log(users))
             .then(setLoading(false))
-            .then(console.log(sortBy))
     }
 
     useEffect(() => {
@@ -121,9 +119,7 @@ const UserListFiltered = (props) => {
                     <div className='u-profile-email'><a href=''>{email}</a></div>
                 </div>
                 <div className='u-profile-details'>
-                    {/* <button> */}
-                        <a href="/user-details">user details</a>
-                    {/* </button> */}
+                    <Link to="/user-details">User Details</Link><BsArrowRightShort size='1.2em' color='#333' />
                 </div>
             </div>
         </>
@@ -135,15 +131,20 @@ const SortByFiltered = (props) => {
 
     return (
         <>
-            <div className='u-profile'>
-                <div className='u-profile-name'>
-                    <div className='u-profile-photo'><IoPersonCircleSharp /></div>
-                    <div className='u-profile-username'>
-                        <div>{name}</div>
-                        <div>{username}</div>
+            <div className='u-header-detail'>
+                <div className='u-profile'>
+                    <div className='u-profile-name'>
+                        <div className='u-profile-photo'><IoPersonCircleSharp /></div>
+                        <div className='u-profile-username'>
+                            <div>{name}</div>
+                            <div>{username}</div>
+                        </div>
                     </div>
+                    <div className='u-profile-email'><a href=''>{email}</a></div>
                 </div>
-                <div className='u-profile-email'><a href=''>{email}</a></div>
+                <div className='u-profile-details'>
+                    <Link to="/user-details">User Details</Link><BsArrowRightShort size='1.2em' color='#333' />
+                </div>
             </div>
         </>
     );
@@ -165,7 +166,9 @@ const UserList = (props) => {
                     </div>
                     <div className='u-profile-email'><a href=''>{email}</a></div>
                 </div>
-                <div className='u-profile-details'><button>user details</button></div>
+                <div className='u-profile-details' id={props.id}>
+                    <Link to="/user-details">User Details</Link><BsArrowRightShort size='1.2em' color='#222' />
+                </div>
             </div>
         </>
     );

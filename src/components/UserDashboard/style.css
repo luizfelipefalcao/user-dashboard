@@ -69,16 +69,14 @@
 }
 
 .u-profile-details {
-    text-align: end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
-.u-profile-details button {
-    background-color: transparent !important;
-    border: 1px solid rgba(3, 3, 3, .4);
-    border-radius: 3px;
-    color: rgba(3, 3, 3, .5);
-    font-weight: bold;
-    padding: 3px 5px;
+.u-profile-details a {
+    color: #222;
     cursor: pointer;
 }
 
