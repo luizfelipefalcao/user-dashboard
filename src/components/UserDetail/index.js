@@ -31,7 +31,7 @@ export default function UserDetail() {
   return (
     <>
       {user.map((list) => (
-        <div className='ud-content'>
+        <div className='ud-content' key={list.id}>
           <div className='ud-back'>
             <BsArrowLeftShort size='1.4em' color='#333' /><Link to="/">User Dashboard</Link>
           </div>
@@ -66,17 +66,17 @@ export default function UserDetail() {
         </div>
       ))}
       {user.map((item) => (
-        <div className='ud-content'>
+        <div className='ud-content' key={item.id}>
           <div className='ud-header-title'>
-            <h2 className='ud-title-posts'>Posts by {item.name}</h2>
+            <h2 className='ud-header-posts'>Posts by {item.name}</h2>
           </div>
         </div>
       ))}
       {userPosts.map((item) => (
-        <div className='ud-control-posts'>
-          <div className='ud-posts'>
-            <span className='ud-title-card'>{item.title}</span>
-            <div className='ud-body-card'>{item.body}</div>
+        <div className='ud-control-posts' key={item.id}>
+          <div className='ud-card-posts'>
+            <span className='ud-title-posts'>{item.title}</span>
+            <div className='ud-body-posts'>{item.body}</div>
           </div>
         </div>
       ))
