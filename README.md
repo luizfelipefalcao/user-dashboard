@@ -1,6 +1,6 @@
 This project was bootstrapped with Create React App.
 
-Live Demo for App is at https://spiderblog.netlify.app
+Live Demo for App is at ...
 
 ## What is inside?
 
