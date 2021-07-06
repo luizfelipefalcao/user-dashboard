@@ -1,6 +1,6 @@
 This project was bootstrapped with Create React App.
 
-Live Demo for App is at ...
+Live Demo for App is at https://user-dashboard-cd.netlify.app
 
 ## What is inside?
 
@@ -9,6 +9,8 @@ This project uses lot of stuff as:
 - ReactJs
 - CSS
 - React-Icons
+- React-Router-Dom
+- {JSON} Placeholder (http://jsonplaceholder.typicode.com/)
 
 
 ## Getting Started
@@ -28,9 +30,9 @@ to run the application
 
 ```
 
-Open [http://localhost:3003](http://localhost:3003) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Commands
 
-- `start`: starts the application on `localhost:3003`
+- `start`: starts the application on `localhost:3000`
 
