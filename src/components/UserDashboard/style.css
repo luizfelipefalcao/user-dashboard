@@ -76,7 +76,7 @@
 }
 
 .u-profile-details a {
-    color: #222;
+    color: blue;
     cursor: pointer;
 }
 
@@ -147,8 +147,13 @@
     .u-profile-photo {
         width: 80px;
     }
+    
     .u-profile-email {
         margin-left: 63px;
+    }
+
+    .u-profile-email-cst {
+        margin-left: 10px;
     }
 
     .u-header-detail {

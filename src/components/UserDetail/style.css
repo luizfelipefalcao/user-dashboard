@@ -74,7 +74,7 @@
 }
 
 .ud-back a {
-  color: #222;
+  color: blue;
 }
 
 .ud-header-posts {
@@ -128,7 +128,7 @@
     width: 90%;
     height: max-content;
     padding: 15px;
-    border: none;
+    margin-top: 10px;
   }
   .ud-posts {
     height: max-content;

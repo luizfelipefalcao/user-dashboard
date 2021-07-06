@@ -4,7 +4,6 @@ import "./style.css";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { BsArrowRightShort } from "react-icons/bs";
 
-const names = ["James", "John", "Paul", "Ringo", "George"];
 export default function UserDashboard() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -14,9 +13,8 @@ export default function UserDashboard() {
   const [sortByFilter, setSortByFilter] = useState([]);
 
   const handleSort = (e) => {
-    setSearch('');
+    setSearch("");
     setSortBy(e.target.value);
-    console.log(sortBy);
   };
 
   const fetchData = async () => {
@@ -30,6 +28,7 @@ export default function UserDashboard() {
   useEffect(() => {
     setLoading(true);
     fetchData();
+    console.log(users);
   }, []);
 
   useEffect(() => {
@@ -38,11 +37,15 @@ export default function UserDashboard() {
         usersItem.name.toLowerCase().includes(search.toLowerCase())
       )
     );
-    console.log(filteredUsers)
   }, [search, users]);
 
   useEffect(() => {
-    setSortByFilter(users.filter((sortedItem) => sortedItem.name));
+    setSortByFilter(
+      users.filter((usersItem) =>
+        usersItem.username.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+    console.log(sortBy);
   }, [sortBy, users]);
 
   if (loading) {
@@ -88,14 +91,17 @@ export default function UserDashboard() {
         </>
       ) : search === "" || sortBy !== "" ? (
         <>
-          {names
-            .filter((d) => d.includes("J"))
-            .map((itemD) => (
-              <li>{itemD}</li>
-            ))}
-          {/* {sortByFilter.map((item, id) => (
-            <SortByFiltered key={id} {...item} />
-          ))} */}
+          {sortByFilter.map((item, id) => (
+            <>
+              {sortBy === "Name" ? (
+                <SortByName key={id} {...item} />
+              ) : sortBy === "Email" ? (
+                <SortByEmail key={id} {...item} />
+              ) : sortBy === "Username" ? (
+                <SortByUsername key={id} {...item} />
+              ) : null}
+            </>
+          ))}
         </>
       ) : null}
     </div>
@@ -124,7 +130,7 @@ const UserList = (props) => {
         </div>
         <div className="u-profile-details">
           <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="#222" />
+          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
@@ -153,15 +159,15 @@ const UserListFiltered = (props) => {
         </div>
         <div className="u-profile-details">
           <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="#333" />
+          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
   );
 };
 
-const SortByFiltered = (props) => {
-  const { name, email, username } = props;
+const SortByName = (props) => {
+  const { name } = props;
 
   return (
     <>
@@ -173,16 +179,61 @@ const SortByFiltered = (props) => {
             </div>
             <div className="u-profile-username">
               <div>{name}</div>
-              <div>{username}</div>
             </div>
-          </div>
-          <div className="u-profile-email">
-            <a href="">{email}</a>
           </div>
         </div>
         <div className="u-profile-details">
           <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="#333" />
+          <BsArrowRightShort size="1.2em" color="blue" />
+        </div>
+      </div>
+    </>
+  );
+};
+
+const SortByUsername = (props) => {
+  const { username } = props;
+
+  return (
+    <>
+      <div className="u-header-detail">
+        <div className="u-profile">
+          <div className="u-profile-name">
+            <div className="u-profile-photo">
+              <IoPersonCircleSharp />
+            </div>
+            <div className="u-profile-username">
+              <div>{username}</div>
+            </div>
+          </div>
+        </div>
+        <div className="u-profile-details">
+          <Link to="/user-details">User Details</Link>
+          <BsArrowRightShort size="1.2em" color="blue" />
+        </div>
+      </div>
+    </>
+  );
+};
+const SortByEmail = (props) => {
+  const { email } = props;
+
+  return (
+    <>
+      <div className="u-header-detail">
+        <div className="u-profile">
+          <div className="u-profile-name">
+            <div className="u-profile-photo">
+              <IoPersonCircleSharp />
+            </div>
+            <div className="u-profile-username">
+              <a href="">{email}</a>
+            </div>
+          </div>
+        </div>
+        <div className="u-profile-details">
+          <Link to="/user-details">User Details</Link>
+          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
