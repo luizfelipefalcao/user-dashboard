@@ -49,8 +49,8 @@
 }
 
 .u-sort select option {
-    background-color: rgb(0, 0, 255, .8);
-    color: #fff;
+    background-color: transparent;
+    color: #333;
     cursor: pointer;
     border-radius: 3px;
 }
@@ -60,7 +60,7 @@
 }
 
 .u-header-detail:nth-child(odd) {
-    background-color: rgb(204, 204, 204, .15);
+    background-color: rgb(204, 204, 204, .2);
 }
 
 .u-header-detail {
@@ -107,6 +107,7 @@
 }
 
 .u-profile-username {
+    text-decoration: none;
     min-width: 200px;
     max-width: 250px;
     margin-left: 15px;

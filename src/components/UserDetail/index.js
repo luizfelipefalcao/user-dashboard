@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+import { BsArrowRightShort } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 import "../UserDashboard";
@@ -8,11 +8,10 @@ import "../UserDashboard";
 export default function UserDetail() {
   const [user, setUser] = useState([]);
   const [userPosts, setUserPosts] = useState([]);
-  const [uID, setUID] = useState("1");
 
   useEffect(() => {
     const fetchDetails = async () => {
-      await fetch(`https://jsonplaceholder.typicode.com/users?id=${uID}`)
+      await fetch(`https://jsonplaceholder.typicode.com/users?id=1`)
         .then((res) => res.json())
         .then((json) => setUser(json))
         .then(console.log(user));
@@ -22,25 +21,21 @@ export default function UserDetail() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      await fetch(`http://jsonplaceholder.typicode.com/posts?userId=${uID}`)
+      await fetch(`http://jsonplaceholder.typicode.com/posts?userId=1`)
         .then((res) => res.json())
         .then((json) => setUserPosts(json))
         .then(console.log(userPosts));
     };
     fetchPosts();
   }, []);
-  
+
   return (
     <>
       {user.map((list) => (
         <div className="ud-content" key={list.id}>
-          <div className="ud-back">
-            <BsArrowLeftShort size="1.3em" color="blue" />
-            <Link to="/">User Dashboard</Link>
-          </div>
           <div>
             <div className="ud-header-title">
-              <h2 className="ud-title-user">User</h2>{" "}
+              <h2 className="ud-title-user"><Link to="/">User</Link></h2>{" "}
               <BsArrowRightShort size="2em" />{" "}
               <h2 className="ud-title-data">{list.name}</h2>
             </div>
@@ -49,16 +44,13 @@ export default function UserDetail() {
                 <span className="ud-title-card">Contact Info</span>
                 <div>Username: {list.username}</div>
                 <div>
-                  Email: <a href="">{list.email}</a>
+                  Name: <Link to="">{list.name}</Link>
                 </div>
                 <div>
-                  Phone: <a href="">{list.phone}</a>
+                  Phone: <Link to="">{list.phone}</Link>
                 </div>
                 <div>
-                  Website:{" "}
-                  <a href={list.website} target="_blank">
-                    {list.website}
-                  </a>
+                  Website: <Link to="">{list.website}</Link>
                 </div>
               </div>
               <div className="ud-address">

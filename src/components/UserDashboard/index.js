@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import { IoPersonCircleSharp } from "react-icons/io5";
-import { BsArrowRightShort } from "react-icons/bs";
 
 export default function UserDashboard() {
   const [users, setUsers] = useState([]);
@@ -120,17 +119,17 @@ const UserList = (props) => {
               <IoPersonCircleSharp />
             </div>
             <div className="u-profile-username">
-              <div>{name}</div>
-              <div>{username}</div>
+              <div>
+                <Link to="/user-details">{name}</Link>
+              </div>
+              <div>
+                <Link to="/user-details">{username}</Link>
+              </div>
             </div>
           </div>
           <div className="u-profile-email">
             <a href="">{email}</a>
           </div>
-        </div>
-        <div className="u-profile-details">
-          <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
@@ -149,17 +148,17 @@ const UserListFiltered = (props) => {
               <IoPersonCircleSharp />
             </div>
             <div className="u-profile-username">
-              <div>{name}</div>
-              <div>{username}</div>
+              <div>
+                <Link to="/user-details">{name}</Link>
+              </div>
+              <div>
+                <Link to="/user-details">{username}</Link>
+              </div>
             </div>
           </div>
           <div className="u-profile-email">
             <a href="">{email}</a>
           </div>
-        </div>
-        <div className="u-profile-details">
-          <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
@@ -178,13 +177,11 @@ const SortByName = (props) => {
               <IoPersonCircleSharp />
             </div>
             <div className="u-profile-username">
-              <div>{name}</div>
+              <div>
+                <Link to="/user-details">{name}</Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="u-profile-details">
-          <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
@@ -203,13 +200,11 @@ const SortByUsername = (props) => {
               <IoPersonCircleSharp />
             </div>
             <div className="u-profile-username">
-              <div>{username}</div>
+              <div>
+                <Link to="/user-details">{username}</Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="u-profile-details">
-          <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
@@ -230,10 +225,6 @@ const SortByEmail = (props) => {
               <a href="">{email}</a>
             </div>
           </div>
-        </div>
-        <div className="u-profile-details">
-          <Link to="/user-details">User Details</Link>
-          <BsArrowRightShort size="1.2em" color="blue" />
         </div>
       </div>
     </>
